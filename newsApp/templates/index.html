@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.1/dist/cerulean/bootstrap.min.css">
+    <title>News App</title>
+</head>
+<body>
+
+    <div class="navbar fixed-top navbar-dark bg-dark">
+        <div class="container">
+            <img src="{% static 'images/breakingnews.png'%}">
+            
+        </div>
+
+    </div>
+
+    <!-- card for header -->
+
+    <div class="jumbotron" style="text-align: center; margin-top: 400px;">
+        <h2> Latest News <a href="https://newsapi.org" style="text-decoration: none;"> News API</a></h2>
+        <img src="{% static 'images/'%}" class="image" style="width: 150px; margin-bottom: -50px;"> 
+
+    </div>
+
+    <div class="container">
+        {% for h1, desc,image in mylist %}
+        <div class="card- border-primary mb-3">
+            <h4><span class="badge badge-primary">Headlines:</span></h4>
+            <h5>{{h1}}{{ value|linebreaks }}</h5>
+            <h4><span class="badge badge-success">Description:</span></h4>
+            <h5>{{desc}}{{ value|linebreaks }}</h5>
+        </div>
+        {% endfor %}
+
+    </div>
+    
+</body>
+</html>
